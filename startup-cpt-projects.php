@@ -44,12 +44,36 @@ function startup_reloaded_projects() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page'
+        'capability_type'     => array('project','projects'),
+        'map_meta_cap'        => true
 	);
 	register_post_type( 'projects', $args );
 
 }
 add_action( 'init', 'startup_reloaded_projects', 0 );
+
+// Capabilities
+
+register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
+
+function startup_reloaded_projects_caps() {
+	
+	$role_admin = get_role( 'administrator' );
+	
+	$role_admin->add_cap( 'edit_project' );
+	$role_admin->add_cap( 'read_project' );
+	$role_admin->add_cap( 'delete_project' );
+	$role_admin->add_cap( 'edit_others_projects' );
+	$role_admin->add_cap( 'publish_projects' );
+	$role_admin->add_cap( 'edit_projects' );
+	$role_admin->add_cap( 'read_private_projects' );
+	$role_admin->add_cap( 'delete_projects' );
+	$role_admin->add_cap( 'delete_private_projects' );
+	$role_admin->add_cap( 'delete_published_projects' );
+	$role_admin->add_cap( 'delete_others_projects' );
+	$role_admin->add_cap( 'edit_private_projects' );
+	$role_admin->add_cap( 'edit_published_projects' );
+}
 
 // Project types taxonomy
 function startup_reloaded_project_types() {
@@ -88,18 +112,18 @@ function startup_reloaded_project_types() {
 add_action( 'init', 'startup_reloaded_project_types', 0 );
 
 // Retirer la boite de la taxonomie sur le coté
-function startup_reloaded_remove_project_types_metabox() {
+function startup_reloaded_project_types_metabox_remove() {
 	remove_meta_box( 'tagsdiv-project-type', 'projects', 'side' );
     // tagsdiv-project_types pour les taxonomies type tags
     // custom_taxonomy_slugdiv pour les taxonomies type categories
 }
 
-add_action( 'admin_menu' , 'startup_reloaded_remove_project_types_metabox' );
+add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
 
 // Metaboxes
-add_action( 'cmb2_init', 'startup_reloaded_metabox_projects' );
+add_action( 'cmb2_init', 'startup_reloaded_projects_meta' );
 
-function startup_reloaded_metabox_projects() {
+function startup_reloaded_projects_meta() {
 
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_startup_reloaded_projects_';
