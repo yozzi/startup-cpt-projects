@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: StartUp Projects Custom Post
-Description: Le plugin pour lactiver le Custom Post Projects
+Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
 Version: 0.1
 */
