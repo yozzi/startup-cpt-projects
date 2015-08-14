@@ -1,18 +1,18 @@
 <?php
 /*
-Plugin Name: StartUp Projects Custom Post
-Description: Le plugin pour activer le Custom Post Projects
+Plugin Name: StartUp Menus Custom Post
+Description: Le plugin pour activer le Custom Post Menus
 Author: Yann Caplain
-Version: 1.0
+Version: 0.1
 */
 
 //CPT
-function startup_reloaded_projects() {
+function startup_reloaded_menus() {
 	$labels = array(
-		'name'                => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'Projects', 'text_domain' ),
-		'name_admin_bar'      => __( 'Projects', 'text_domain' ),
+		'name'                => _x( 'Menus', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Menu', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Menus', 'text_domain' ),
+		'name_admin_bar'      => __( 'Menus', 'text_domain' ),
 		'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
 		'all_items'           => __( 'All Items', 'text_domain' ),
 		'add_new_item'        => __( 'Add New Item', 'text_domain' ),
@@ -26,58 +26,57 @@ function startup_reloaded_projects() {
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' )
 	);
 	$args = array(
-		'label'               => __( 'projects', 'text_domain' ),
+		'label'               => __( 'menus', 'text_domain' ),
 		'description'         => __( 'Post Type Description', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'revisions', ),
-		//'taxonomies'          => array( 'project_types' ),
 		'hierarchical'        => true,
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'menu_position'       => 5,
-		'menu_icon'           => 'dashicons-building',
+		'menu_icon'           => 'dashicons-carrot',
 		'show_in_admin_bar'   => false,
 		'show_in_nav_menus'   => true,
 		'can_export'          => true,
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-        'capability_type'     => array('project','projects'),
+        'capability_type'     => array('menu','menus'),
         'map_meta_cap'        => true
 	);
-	register_post_type( 'projects', $args );
+	register_post_type( 'menus', $args );
 
 }
 
-add_action( 'init', 'startup_reloaded_projects', 0 );
+add_action( 'init', 'startup_reloaded_menus', 0 );
 
 // Capabilities
-function startup_reloaded_projects_caps() {
+function startup_reloaded_menus_caps() {
 	$role_admin = get_role( 'administrator' );
-	$role_admin->add_cap( 'edit_project' );
-	$role_admin->add_cap( 'read_project' );
-	$role_admin->add_cap( 'delete_project' );
-	$role_admin->add_cap( 'edit_others_projects' );
-	$role_admin->add_cap( 'publish_projects' );
-	$role_admin->add_cap( 'edit_projects' );
-	$role_admin->add_cap( 'read_private_projects' );
-	$role_admin->add_cap( 'delete_projects' );
-	$role_admin->add_cap( 'delete_private_projects' );
-	$role_admin->add_cap( 'delete_published_projects' );
-	$role_admin->add_cap( 'delete_others_projects' );
-	$role_admin->add_cap( 'edit_private_projects' );
-	$role_admin->add_cap( 'edit_published_projects' );
+	$role_admin->add_cap( 'edit_menu' );
+	$role_admin->add_cap( 'read_menu' );
+	$role_admin->add_cap( 'delete_menu' );
+	$role_admin->add_cap( 'edit_others_menus' );
+	$role_admin->add_cap( 'publish_menus' );
+	$role_admin->add_cap( 'edit_menus' );
+	$role_admin->add_cap( 'read_private_menus' );
+	$role_admin->add_cap( 'delete_menus' );
+	$role_admin->add_cap( 'delete_private_menus' );
+	$role_admin->add_cap( 'delete_published_menus' );
+	$role_admin->add_cap( 'delete_others_menus' );
+	$role_admin->add_cap( 'edit_private_menus' );
+	$role_admin->add_cap( 'edit_published_menus' );
 }
 
-register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
+register_activation_hook( __FILE__, 'startup_reloaded_menus_caps' );
 
-// Project types taxonomy
-function startup_reloaded_project_types() {
+// Menu types taxonomy
+function startup_reloaded_menu_types() {
 	$labels = array(
 		'name'                       => _x( 'Types', 'Taxonomy General Name', 'text_domain' ),
 		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Project Types', 'text_domain' ),
+		'menu_name'                  => __( 'Menu Types', 'text_domain' ),
 		'all_items'                  => __( 'All Items', 'text_domain' ),
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
@@ -102,35 +101,35 @@ function startup_reloaded_project_types() {
 		'show_in_nav_menus'          => false,
 		'show_tagcloud'              => false
 	);
-	register_taxonomy( 'project-type', array( 'projects' ), $args );
+	register_taxonomy( 'menu-type', array( 'menus' ), $args );
 
 }
 
-add_action( 'init', 'startup_reloaded_project_types', 0 );
+add_action( 'init', 'startup_reloaded_menu_types', 0 );
 
 // Retirer la boite de la taxonomie sur le coté
-function startup_reloaded_project_types_metabox_remove() {
-	remove_meta_box( 'tagsdiv-project-type', 'projects', 'side' );
+function startup_reloaded_menu_types_metabox_remove() {
+	remove_meta_box( 'tagsdiv-menu-type', 'menus', 'side' );
     // tagsdiv-project_types pour les taxonomies type tags
     // custom_taxonomy_slugdiv pour les taxonomies type categories
 }
 
-add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
+add_action( 'admin_menu' , 'startup_reloaded_menu_types_metabox_remove' );
 
 // Metaboxes
-function startup_reloaded_projects_meta() {
+function startup_reloaded_menus_meta() {
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_startup_reloaded_projects_';
+	$prefix = '_startup_reloaded_menus_';
 
 	$cmb_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Project details', 'cmb2' ),
-		'object_types'  => array( 'projects' )
+		'title'         => __( 'Menu details', 'cmb2' ),
+		'object_types'  => array( 'menus' )
 	) );
     
     $cmb_box->add_field( array(
 		'name' => __( 'Main picture', 'cmb2' ),
-		'desc' => __( 'Main image of the project, may be different from the thumbnail. i.e. 3D model', 'cmb2' ),
+		'desc' => __( 'Main image of the menu, may be different from the thumbnail. i.e. 5-course diner', 'cmb2' ),
 		'id'   => $prefix . 'main_pic',
 		'type' => 'file',
         // Optionally hide the text input for the url:
@@ -141,7 +140,7 @@ function startup_reloaded_projects_meta() {
     
     $cmb_box->add_field( array(
 		'name' => __( 'Thumbnail', 'cmb2' ),
-		'desc' => __( 'The project picture on your website listings, if different from Main picture.', 'cmb2' ),
+		'desc' => __( 'The menu picture on your website listings, if different from Main picture.', 'cmb2' ),
 		'id'   => $prefix . 'thumbnail',
 		'type' => 'file',
         // Optionally hide the text input for the url:
@@ -152,41 +151,21 @@ function startup_reloaded_projects_meta() {
 
 	$cmb_box->add_field( array(
 		'name'       => __( 'Short description', 'cmb2' ),
-		'desc'       => __( 'i.e. "New business building in Montreal"', 'cmb2' ),
+		'desc'       => __( 'i.e. "French gourmet menu."', 'cmb2' ),
 		'id'         => $prefix . 'short',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
 		'name'     => __( 'Type', 'cmb2' ),
-		'desc'     => __( 'Select the type(s) of the project', 'cmb2' ),
+		'desc'     => __( 'Select the type(s) of the menu', 'cmb2' ),
 		'id'       => $prefix . 'type',
 		'type'     => 'taxonomy_multicheck',
-		'taxonomy' => 'project-type', // Taxonomy Slug
+		'taxonomy' => 'menu-type', // Taxonomy Slug
 		'inline'  => true // Toggles display to inline
 	) );
     
-    $cmb_box->add_field( array(
-		'name'             => __( 'Status', 'cmb2' ),
-		'desc'             => __( 'The project\'s current status', 'cmb2' ),
-		'id'               => $prefix . 'status',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'options'          => array(
-			'Prévente' => __( 'Prévente', 'cmb2' ),
-			'Vendu'   => __( 'Vendu', 'cmb2' ),
-			'Prix révisé'     => __( 'Prix révisé', 'cmb2' ),
-            'Une unité disponible'   => __( 'Une unité disponible', 'cmb2' ),
-			'Deux unités disponibles'     => __( 'Deux unités disponibles', 'cmb2' ),
-		),
-	) );
     
-    $cmb_box->add_field( array(
-		'name' => __( 'Description', 'cmb2' ),
-		'desc' => __( 'Full, main description', 'cmb2' ),
-		'id'   => $prefix . 'description',
-		'type' => 'textarea'
-	) );
     
     $cmb_box->add_field( array(
 		'name'       => __( 'Specifications', 'cmb2' ),
@@ -270,5 +249,5 @@ function startup_reloaded_projects_meta() {
 	) );
 }
 
-add_action( 'cmb2_init', 'startup_reloaded_projects_meta' );
+add_action( 'cmb2_init', 'startup_reloaded_menus_meta' );
 ?>
