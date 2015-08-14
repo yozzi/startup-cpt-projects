@@ -8,7 +8,6 @@ Version: 1.0
 
 //CPT
 function startup_reloaded_projects() {
-
 	$labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
@@ -50,16 +49,12 @@ function startup_reloaded_projects() {
 	register_post_type( 'projects', $args );
 
 }
+
 add_action( 'init', 'startup_reloaded_projects', 0 );
 
 // Capabilities
-
-register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
-
 function startup_reloaded_projects_caps() {
-	
 	$role_admin = get_role( 'administrator' );
-	
 	$role_admin->add_cap( 'edit_project' );
 	$role_admin->add_cap( 'read_project' );
 	$role_admin->add_cap( 'delete_project' );
@@ -75,9 +70,10 @@ function startup_reloaded_projects_caps() {
 	$role_admin->add_cap( 'edit_published_projects' );
 }
 
+register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
+
 // Project types taxonomy
 function startup_reloaded_project_types() {
-
 	$labels = array(
 		'name'                       => _x( 'Types', 'Taxonomy General Name', 'text_domain' ),
 		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'text_domain' ),
@@ -109,6 +105,7 @@ function startup_reloaded_project_types() {
 	register_taxonomy( 'project-type', array( 'projects' ), $args );
 
 }
+
 add_action( 'init', 'startup_reloaded_project_types', 0 );
 
 // Retirer la boite de la taxonomie sur le coté
@@ -121,10 +118,7 @@ function startup_reloaded_project_types_metabox_remove() {
 add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
 
 // Metaboxes
-add_action( 'cmb2_init', 'startup_reloaded_projects_meta' );
-
 function startup_reloaded_projects_meta() {
-
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_startup_reloaded_projects_';
 
@@ -275,4 +269,6 @@ function startup_reloaded_projects_meta() {
 		'type' => 'text_url'
 	) );
 }
+
+add_action( 'cmb2_init', 'startup_reloaded_projects_meta' );
 ?>
