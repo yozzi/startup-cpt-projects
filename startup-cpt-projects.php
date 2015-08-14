@@ -3,7 +3,7 @@
 Plugin Name: StartUp Projects Custom Post
 Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
-Version: 1.0 test
+Version: 1.0
 */
 
 //CPT
