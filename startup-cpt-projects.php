@@ -75,8 +75,8 @@ register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
 // Project types taxonomy
 function startup_reloaded_project_types() {
 	$labels = array(
-		'name'                       => _x( 'Types', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'text_domain' ),
+		'name'                       => _x( 'Project Types', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Project Type', 'Taxonomy Singular Name', 'text_domain' ),
 		'menu_name'                  => __( 'Project Types', 'text_domain' ),
 		'all_items'                  => __( 'All Items', 'text_domain' ),
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),
@@ -99,7 +99,7 @@ function startup_reloaded_project_types() {
 		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
-		'show_in_nav_menus'          => false,
+		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => false
 	);
 	register_taxonomy( 'project-type', array( 'projects' ), $args );
