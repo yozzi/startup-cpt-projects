@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: StartUp Projects Custom Post
+Plugin Name: StartUp Projects Custom Post Type
 Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
 Version: 1.1.0
