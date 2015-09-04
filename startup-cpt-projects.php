@@ -35,7 +35,7 @@ function startup_reloaded_projects() {
 	$labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'Projects', 'text_domain' ),
+		'menu_name'           => __( 'Projects (b)', 'text_domain' ),
 		'name_admin_bar'      => __( 'Projects', 'text_domain' ),
 		'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
 		'all_items'           => __( 'All Items', 'text_domain' ),
