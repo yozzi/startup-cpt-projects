@@ -76,6 +76,14 @@ function startup_reloaded_projects() {
 
 add_action( 'init', 'startup_reloaded_projects', 0 );
 
+//Flusher les permalink à l'activation du plgin pour qu'ils fonctionnent sans mise à jour manuelle
+function startup_reloaded_projects_rewrite_flush() {
+    startup_reloaded_projects();
+    flush_rewrite_rules();
+}
+
+register_activation_hook( __FILE__, 'startup_reloaded_projects_rewrite_flush' );
+
 // Capabilities
 function startup_reloaded_projects_caps() {
 	$role_admin = get_role( 'administrator' );
