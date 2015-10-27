@@ -302,7 +302,7 @@ function startup_reloaded_projects_meta() {
 	) );
 }
 
-add_action( 'cmb2_init', 'startup_reloaded_projects_meta' );
+add_action( 'cmb2_admin_init', 'startup_reloaded_projects_meta' );
 
 // Shortcode
 add_shortcode( 'projects', function( $atts, $content= null ){
