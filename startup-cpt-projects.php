@@ -1,9 +1,10 @@
 <?php
 /*
-Plugin Name: StartUp Projects
+Plugin Name: StartUp CPT Projects
 Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
 Version: 1.2.0
+Text Domain: startup-cpt-projects
 */
 
 //GitHub Plugin Updater
