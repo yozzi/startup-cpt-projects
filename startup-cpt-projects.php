@@ -307,7 +307,7 @@ add_action( 'cmb2_admin_init', 'startup_reloaded_projects_meta' );
 // Shortcode
 add_shortcode( 'projects', function( $atts, $content= null ){
     ob_start();
-    require get_template_directory() . '/inc/shortcodes/projects.php';
+    require get_template_directory() . '/template-parts/content-projects.php';
     return ob_get_clean();
 });
 ?>
