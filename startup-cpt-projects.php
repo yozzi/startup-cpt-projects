@@ -306,9 +306,17 @@ function startup_reloaded_projects_meta() {
 add_action( 'cmb2_admin_init', 'startup_reloaded_projects_meta' );
 
 // Shortcode
-add_shortcode( 'projects', function( $atts, $content= null ){
-    ob_start();
-    require get_template_directory() . '/template-parts/content-projects.php';
-    return ob_get_clean();
-});
+function startup_reloaded_projects_shortcode( $atts ) {
+
+	// Attributes
+    $atts = shortcode_atts(array(
+            'bg' => ''
+        ), $atts);
+    
+	// Code
+        ob_start();
+        require get_template_directory() . '/template-parts/content-projects.php';
+        return ob_get_clean();    
+}
+add_shortcode( 'projects', 'startup_reloaded_projects_shortcode' );
 ?>
