@@ -34,25 +34,25 @@ add_action( 'init', 'startup_reloaded_projects_updater' );
 //CPT
 function startup_reloaded_projects() {
 	$labels = array(
-		'name'                => _x( 'Projects', 'Post Type General Name', 'text_domain' ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'Projects (b)', 'text_domain' ),
-		'name_admin_bar'      => __( 'Projects', 'text_domain' ),
-		'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
-		'all_items'           => __( 'All Items', 'text_domain' ),
-		'add_new_item'        => __( 'Add New Item', 'text_domain' ),
-		'add_new'             => __( 'Add New', 'text_domain' ),
-		'new_item'            => __( 'New Item', 'text_domain' ),
-		'edit_item'           => __( 'Edit Item', 'text_domain' ),
-		'update_item'         => __( 'Update Item', 'text_domain' ),
-		'view_item'           => __( 'View Item', 'text_domain' ),
-		'search_items'        => __( 'Search Item', 'text_domain' ),
-		'not_found'           => __( 'Not found', 'text_domain' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' )
+		'name'                => _x( 'Projects', 'Post Type General Name', 'startup-cpt-projects' ),
+		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'startup-cpt-projects' ),
+		'menu_name'           => __( 'Projects (b)', 'startup-cpt-projects' ),
+		'name_admin_bar'      => __( 'Projects', 'startup-cpt-projects' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'startup-cpt-projects' ),
+		'all_items'           => __( 'All Items', 'startup-cpt-projects' ),
+		'add_new_item'        => __( 'Add New Item', 'startup-cpt-projects' ),
+		'add_new'             => __( 'Add New', 'startup-cpt-projects' ),
+		'new_item'            => __( 'New Item', 'startup-cpt-projects' ),
+		'edit_item'           => __( 'Edit Item', 'startup-cpt-projects' ),
+		'update_item'         => __( 'Update Item', 'startup-cpt-projects' ),
+		'view_item'           => __( 'View Item', 'startup-cpt-projects' ),
+		'search_items'        => __( 'Search Item', 'startup-cpt-projects' ),
+		'not_found'           => __( 'Not found', 'startup-cpt-projects' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'startup-cpt-projects' )
 	);
 	$args = array(
-		'label'               => __( 'projects', 'text_domain' ),
-		'description'         => __( 'Post Type Description', 'text_domain' ),
+		'label'               => __( 'projects', 'startup-cpt-projects' ),
+		'description'         => __( 'Post Type Description', 'startup-cpt-projects' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'revisions', ),
 		//'taxonomies'          => array( 'project_types' ),
@@ -108,23 +108,23 @@ register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
 // Project types taxonomy
 function startup_reloaded_project_types() {
 	$labels = array(
-		'name'                       => _x( 'Project Types', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Project Type', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Project Types', 'text_domain' ),
-		'all_items'                  => __( 'All Items', 'text_domain' ),
-		'parent_item'                => __( 'Parent Item', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
-		'new_item_name'              => __( 'New Item Name', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Item', 'text_domain' ),
-		'edit_item'                  => __( 'Edit Item', 'text_domain' ),
-		'update_item'                => __( 'Update Item', 'text_domain' ),
-		'view_item'                  => __( 'View Item', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-		'popular_items'              => __( 'Popular Items', 'text_domain' ),
-		'search_items'               => __( 'Search Items', 'text_domain' ),
-		'not_found'                  => __( 'Not Found', 'text_domain' )
+		'name'                       => _x( 'Project Types', 'Taxonomy General Name', 'startup-cpt-projects' ),
+		'singular_name'              => _x( 'Project Type', 'Taxonomy Singular Name', 'startup-cpt-projects' ),
+		'menu_name'                  => __( 'Project Types', 'startup-cpt-projects' ),
+		'all_items'                  => __( 'All Items', 'startup-cpt-projects' ),
+		'parent_item'                => __( 'Parent Item', 'startup-cpt-projects' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'startup-cpt-projects' ),
+		'new_item_name'              => __( 'New Item Name', 'startup-cpt-projects' ),
+		'add_new_item'               => __( 'Add New Item', 'startup-cpt-projects' ),
+		'edit_item'                  => __( 'Edit Item', 'startup-cpt-projects' ),
+		'update_item'                => __( 'Update Item', 'startup-cpt-projects' ),
+		'view_item'                  => __( 'View Item', 'startup-cpt-projects' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'startup-cpt-projects' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'startup-cpt-projects' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'startup-cpt-projects' ),
+		'popular_items'              => __( 'Popular Items', 'startup-cpt-projects' ),
+		'search_items'               => __( 'Search Items', 'startup-cpt-projects' ),
+		'not_found'                  => __( 'Not Found', 'startup-cpt-projects' )
 	);
 	$args = array(
 		'labels'                     => $labels,
@@ -157,13 +157,13 @@ function startup_reloaded_projects_meta() {
 
 	$cmb_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Project details', 'cmb2' ),
+		'title'         => __( 'Project details', 'startup-cpt-projects' ),
 		'object_types'  => array( 'projects' )
 	) );
     
     $cmb_box->add_field( array(
-		'name' => __( 'Main picture', 'cmb2' ),
-		'desc' => __( 'Main image of the project, may be different from the thumbnail. i.e. 3D model', 'cmb2' ),
+		'name' => __( 'Main picture', 'startup-cpt-projects' ),
+		'desc' => __( 'Main image of the project, may be different from the thumbnail. i.e. 3D model', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'main_pic',
 		'type' => 'file',
         // Optionally hide the text input for the url:
@@ -173,8 +173,8 @@ function startup_reloaded_projects_meta() {
 	) );
     
     $cmb_box->add_field( array(
-		'name' => __( 'Thumbnail', 'cmb2' ),
-		'desc' => __( 'The project picture on your website listings, if different from Main picture.', 'cmb2' ),
+		'name' => __( 'Thumbnail', 'startup-cpt-projects' ),
+		'desc' => __( 'The project picture on your website listings, if different from Main picture.', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'thumbnail',
 		'type' => 'file',
         // Optionally hide the text input for the url:
@@ -184,15 +184,15 @@ function startup_reloaded_projects_meta() {
 	) );
 
 	$cmb_box->add_field( array(
-		'name'       => __( 'Short description', 'cmb2' ),
-		'desc'       => __( 'i.e. "New business building in Montreal"', 'cmb2' ),
+		'name'       => __( 'Short description', 'startup-cpt-projects' ),
+		'desc'       => __( 'i.e. "New business building in Montreal"', 'startup-cpt-projects' ),
 		'id'         => $prefix . 'short',
 		'type'       => 'text'
 	) );
     
     $cmb_box->add_field( array(
-		'name'     => __( 'Type', 'cmb2' ),
-		'desc'     => __( 'Select the type(s) of the project', 'cmb2' ),
+		'name'     => __( 'Type', 'startup-cpt-projects' ),
+		'desc'     => __( 'Select the type(s) of the project', 'startup-cpt-projects' ),
 		'id'       => $prefix . 'type',
 		'type'     => 'taxonomy_multicheck',
 		'taxonomy' => 'project-type', // Taxonomy Slug
@@ -200,36 +200,36 @@ function startup_reloaded_projects_meta() {
 	) );
     
     $cmb_box->add_field( array(
-		'name'             => __( 'Status', 'cmb2' ),
-		'desc'             => __( 'The project\'s current status', 'cmb2' ),
+		'name'             => __( 'Status', 'startup-cpt-projects' ),
+		'desc'             => __( 'The project\'s current status', 'startup-cpt-projects' ),
 		'id'               => $prefix . 'status',
 		'type'             => 'select',
 		'show_option_none' => true,
 		'options'          => array(
-			'Prévente' => __( 'Prévente', 'cmb2' ),
-			'Vendu'   => __( 'Vendu', 'cmb2' ),
-			'Prix révisé'     => __( 'Prix révisé', 'cmb2' ),
-            'Une unité disponible'   => __( 'Une unité disponible', 'cmb2' ),
-			'Deux unités disponibles'     => __( 'Deux unités disponibles', 'cmb2' ),
+			'Prévente' => __( 'Prévente', 'startup-cpt-projects' ),
+			'Vendu'   => __( 'Vendu', 'startup-cpt-projects' ),
+			'Prix révisé'     => __( 'Prix révisé', 'startup-cpt-projects' ),
+            'Une unité disponible'   => __( 'Une unité disponible', 'startup-cpt-projects' ),
+			'Deux unités disponibles'     => __( 'Deux unités disponibles', 'startup-cpt-projects' ),
 		),
 	) );
     
     $cmb_box->add_field( array(
-		'name' => __( 'Description', 'cmb2' ),
-		'desc' => __( 'Full, main description', 'cmb2' ),
+		'name' => __( 'Description', 'startup-cpt-projects' ),
+		'desc' => __( 'Full, main description', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'description',
 		'type' => 'textarea'
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Specifications', 'cmb2' ),
+		'name'       => __( 'Specifications', 'startup-cpt-projects' ),
 		'id'         => $prefix . 'specifications',
 		'type'       => 'text',
 		'repeatable'      => true
 	) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Available options', 'cmb2' ),
+		'name'       => __( 'Available options', 'startup-cpt-projects' ),
 		'id'         => $prefix . 'options',
 		'type'       => 'text',
 		'repeatable'      => true
@@ -255,22 +255,22 @@ function startup_reloaded_projects_meta() {
     ) );
     
     $cmb_box->add_field( array(
-		'name'       => __( 'Warranty', 'cmb2' ),
-		'desc'       => __( 'i.e. "5 years by Qualité Habitation"', 'cmb2' ),
+		'name'       => __( 'Warranty', 'startup-cpt-projects' ),
+		'desc'       => __( 'i.e. "5 years by Qualité Habitation"', 'startup-cpt-projects' ),
 		'id'         => $prefix . 'warranty',
 		'type'       => 'text'
 	) );
 
 	$cmb_box->add_field( array(
-		'name' => __( 'Price', 'cmb2' ),
-		'desc' => __( 'The project price in Canadian Dollar', 'cmb2' ),
+		'name' => __( 'Price', 'startup-cpt-projects' ),
+		'desc' => __( 'The project price in Canadian Dollar', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'price',
 		'type' => 'text_money'
 	) );
 
     $cmb_box->add_field( array(
-		'name' => __( 'Implantation', 'cmb2' ),
-		'desc' => __( 'Image file of the certificate of implantation', 'cmb2' ),
+		'name' => __( 'Implantation', 'startup-cpt-projects' ),
+		'desc' => __( 'Image file of the certificate of implantation', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'implantation',
 		'type' => 'file',
         // Optionally hide the text input for the url:
@@ -280,24 +280,24 @@ function startup_reloaded_projects_meta() {
 	) );
 
 	$cmb_box->add_field( array(
-		'name'         => __( 'Plans', 'cmb2' ),
-		'desc'         => __( 'Upload or add multiple images for project plans.', 'cmb2' ),
+		'name'         => __( 'Plans', 'startup-cpt-projects' ),
+		'desc'         => __( 'Upload or add multiple images for project plans.', 'startup-cpt-projects' ),
 		'id'           => $prefix . 'plans',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ) // Default: array( 50, 50 )
 	) );
     
     $cmb_box->add_field( array(
-		'name'         => __( 'Gallery', 'cmb2' ),
-		'desc'         => __( 'Upload or add multiple images for project photo gallery.', 'cmb2' ),
+		'name'         => __( 'Gallery', 'startup-cpt-projects' ),
+		'desc'         => __( 'Upload or add multiple images for project photo gallery.', 'startup-cpt-projects' ),
 		'id'           => $prefix . 'gallery',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ) // Default: array( 50, 50 )
 	) );
     
     $cmb_box->add_field( array(
-		'name' => __( 'External url', 'cmb2' ),
-		'desc' => __( 'Link to te project on an extrenal website (i.e. real estate agency)', 'cmb2' ),
+		'name' => __( 'External url', 'startup-cpt-projects' ),
+		'desc' => __( 'Link to te project on an extrenal website (i.e. real estate agency)', 'startup-cpt-projects' ),
 		'id'   => $prefix . 'url',
 		'type' => 'text_url'
 	) );
