@@ -29,7 +29,7 @@ function startup_reloaded_projects_updater() {
 	}
 }
 
-add_action( 'init', 'startup_reloaded_projects_updater' );
+//add_action( 'init', 'startup_reloaded_projects_updater' );
 
 //CPT
 function startup_reloaded_projects() {
