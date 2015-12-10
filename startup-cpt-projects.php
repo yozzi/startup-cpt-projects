@@ -13,7 +13,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 //GitHub Plugin Updater
-function startup_reloaded_projects_updater() {
+function startup_cpt_projects_updater() {
 	include_once 'lib/updater.php';
 	//define( 'WP_GITHUB_FORCE_UPDATE', true );
 	if ( is_admin() ) {
@@ -34,10 +34,10 @@ function startup_reloaded_projects_updater() {
 	}
 }
 
-//add_action( 'init', 'startup_reloaded_projects_updater' );
+//add_action( 'init', 'startup_cpt_projects_updater' );
 
 //CPT
-function startup_reloaded_projects() {
+function startup_cpt_projects() {
 	$labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', 'startup-cpt-projects' ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', 'startup-cpt-projects' ),
@@ -80,18 +80,18 @@ function startup_reloaded_projects() {
 
 }
 
-add_action( 'init', 'startup_reloaded_projects', 0 );
+add_action( 'init', 'startup_cpt_projects', 0 );
 
 //Flusher les permalink à l'activation du plugin pour qu'ils fonctionnent sans mise à jour manuelle
-function startup_reloaded_projects_rewrite_flush() {
-    startup_reloaded_projects();
+function startup_cpt_projects_rewrite_flush() {
+    startup_cpt_projects();
     flush_rewrite_rules();
 }
 
-register_activation_hook( __FILE__, 'startup_reloaded_projects_rewrite_flush' );
+register_activation_hook( __FILE__, 'startup_cpt_projects_rewrite_flush' );
 
 // Capabilities
-function startup_reloaded_projects_caps() {
+function startup_cpt_projects_caps() {
 	$role_admin = get_role( 'administrator' );
 	$role_admin->add_cap( 'edit_project' );
 	$role_admin->add_cap( 'read_project' );
@@ -108,7 +108,7 @@ function startup_reloaded_projects_caps() {
 	$role_admin->add_cap( 'edit_published_projects' );
 }
 
-register_activation_hook( __FILE__, 'startup_reloaded_projects_caps' );
+register_activation_hook( __FILE__, 'startup_cpt_projects_caps' );
 
 // Project types taxonomy
 function startup_reloaded_project_types() {
@@ -156,9 +156,9 @@ function startup_reloaded_project_types_metabox_remove() {
 add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
 
 // Metaboxes
-function startup_reloaded_projects_meta() {
+function startup_cpt_projects_meta() {
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_startup_reloaded_projects_';
+	$prefix = '_startup_cpt_projects_';
 
 	$cmb_box = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
@@ -308,10 +308,10 @@ function startup_reloaded_projects_meta() {
 	) );
 }
 
-add_action( 'cmb2_admin_init', 'startup_reloaded_projects_meta' );
+add_action( 'cmb2_admin_init', 'startup_cpt_projects_meta' );
 
 // Shortcode
-function startup_reloaded_projects_shortcode( $atts ) {
+function startup_cpt_projects_shortcode( $atts ) {
 
 	// Attributes
     $atts = shortcode_atts(array(
@@ -323,5 +323,47 @@ function startup_reloaded_projects_shortcode( $atts ) {
         require get_template_directory() . '/template-parts/content-projects.php';
         return ob_get_clean();    
 }
-add_shortcode( 'projects', 'startup_reloaded_projects_shortcode' );
+add_shortcode( 'projects', 'startup_cpt_projects_shortcode' );
+
+// Shortcode UI
+/**
+ * Detecion de Shortcake. Identique dans tous les plugins.
+ */
+if ( !function_exists( 'shortcode_ui_detection' ) ) {
+    function shortcode_ui_detection() {
+        if ( !function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
+            add_action( 'admin_notices', 'shortcode_ui_notice' );
+        }
+    }
+
+    function shortcode_ui_notice() {
+        if ( current_user_can( 'activate_plugins' ) ) {
+            echo '<div class="error message"><p>Shortcode UI plugin must be active to use fast shortcodes.</p></div>';
+        }
+    }
+
+add_action( 'init', 'shortcode_ui_detection' );
+}
+
+function startup_cpt_projects_shortcode_ui() {
+
+    shortcode_ui_register_for_shortcode(
+        'projects',
+        array(
+            'label' => esc_html__( 'Projects', 'startup-cpt-projects' ),
+            'listItemImage' => 'dashicons-building',
+            'attrs' => array(
+                array(
+                    'label' => esc_html__( 'Background', 'startup-cpt-projects' ),
+                    'attr'  => 'bg',
+                    'type'  => 'color',
+                ),
+            ),
+        )
+    );
+};
+
+if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
+    add_action( 'init', 'startup_cpt_projects_shortcode_ui');
+}
 ?>
