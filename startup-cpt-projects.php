@@ -5,6 +5,7 @@ Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
 Version: 1.2.0
 Text Domain: startup-cpt-projects
+Domain Path: /languages
 */
 
 // If this file is called directly, abort.
@@ -156,6 +157,25 @@ function startup_reloaded_project_types_metabox_remove() {
 add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
 
 // Metaboxes
+/**
+ * Detection de CMB2. Identique dans tous les plugins.
+ */
+if ( !function_exists( 'cmb2_detection' ) ) {
+    function cmb2_detection() {
+        if ( !is_plugin_active('CMB2/init.php')  && !function_exists( 'startup_reloaded_setup' ) ) {
+            add_action( 'admin_notices', 'cmb2_notice' );
+        }
+    }
+
+    function cmb2_notice() {
+        if ( current_user_can( 'activate_plugins' ) ) {
+            echo '<div class="error message"><p>' . __( 'CMB2 plugin or StartUp Reloaded theme must be active to use custom metaboxes.', 'startup-cpt-projects' ) . '</p></div>';
+        }
+    }
+
+    add_action( 'init', 'cmb2_detection' );
+}
+
 function startup_cpt_projects_meta() {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_startup_cpt_projects_';

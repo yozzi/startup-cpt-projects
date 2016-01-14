@@ -1,0 +1,303 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: StartUp CPT Projects\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Thu Jan 14 2016 09:15:50 GMT-0500 (Est)\n"
+"POT-Revision-Date: Thu Jan 14 2016 09:15:51 GMT-0500 (Est)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "StartUp CPT Projects"
+msgstr ""
+
+#. Description of the plugin
+msgid "Le plugin pour activer le Custom Post Projects"
+msgstr ""
+
+#. Author of the plugin
+msgid "Yann Caplain"
+msgstr ""
+
+#: ../startup-cpt-projects.php:43
+msgctxt "Post Type General Name"
+msgid "Projects"
+msgstr ""
+
+#: ../startup-cpt-projects.php:44
+msgctxt "Post Type Singular Name"
+msgid "Project"
+msgstr ""
+
+#: ../startup-cpt-projects.php:45
+msgid "Projects (b)"
+msgstr ""
+
+#: ../startup-cpt-projects.php:46 ../startup-cpt-projects.php:373
+msgid "Projects"
+msgstr ""
+
+#: ../startup-cpt-projects.php:47 ../startup-cpt-projects.php:122
+msgid "Parent Item:"
+msgstr ""
+
+#: ../startup-cpt-projects.php:48 ../startup-cpt-projects.php:120
+msgid "All Items"
+msgstr ""
+
+#: ../startup-cpt-projects.php:49 ../startup-cpt-projects.php:124
+msgid "Add New Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:50
+msgid "Add New"
+msgstr ""
+
+#: ../startup-cpt-projects.php:51
+msgid "New Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:52 ../startup-cpt-projects.php:125
+msgid "Edit Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:53 ../startup-cpt-projects.php:126
+msgid "Update Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:54 ../startup-cpt-projects.php:127
+msgid "View Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:55
+msgid "Search Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:56
+msgid "Not found"
+msgstr ""
+
+#: ../startup-cpt-projects.php:57
+msgid "Not found in Trash"
+msgstr ""
+
+#: ../startup-cpt-projects.php:60
+msgid "projects"
+msgstr ""
+
+#: ../startup-cpt-projects.php:61
+msgid "Post Type Description"
+msgstr ""
+
+#: ../startup-cpt-projects.php:117
+msgctxt "Taxonomy General Name"
+msgid "Project Types"
+msgstr ""
+
+#: ../startup-cpt-projects.php:118
+msgctxt "Taxonomy Singular Name"
+msgid "Project Type"
+msgstr ""
+
+#: ../startup-cpt-projects.php:119
+msgid "Project Types"
+msgstr ""
+
+#: ../startup-cpt-projects.php:121
+msgid "Parent Item"
+msgstr ""
+
+#: ../startup-cpt-projects.php:123
+msgid "New Item Name"
+msgstr ""
+
+#: ../startup-cpt-projects.php:128
+msgid "Separate items with commas"
+msgstr ""
+
+#: ../startup-cpt-projects.php:129
+msgid "Add or remove items"
+msgstr ""
+
+#: ../startup-cpt-projects.php:130
+msgid "Choose from the most used"
+msgstr ""
+
+#: ../startup-cpt-projects.php:131
+msgid "Popular Items"
+msgstr ""
+
+#: ../startup-cpt-projects.php:132
+msgid "Search Items"
+msgstr ""
+
+#: ../startup-cpt-projects.php:133
+msgid "Not Found"
+msgstr ""
+
+#: ../startup-cpt-projects.php:172
+msgid "CMB2 plugin or StartUp Reloaded theme must be active to use custom metaboxes."
+msgstr ""
+
+#: ../startup-cpt-projects.php:185
+msgid "Project details"
+msgstr ""
+
+#: ../startup-cpt-projects.php:190
+msgid "Main picture"
+msgstr ""
+
+#: ../startup-cpt-projects.php:191
+msgid "Main image of the project, may be different from the thumbnail. i.e. 3D model"
+msgstr ""
+
+#: ../startup-cpt-projects.php:201
+msgid "Thumbnail"
+msgstr ""
+
+#: ../startup-cpt-projects.php:202
+msgid "The project picture on your website listings, if different from Main picture."
+msgstr ""
+
+#: ../startup-cpt-projects.php:212
+msgid "Short description"
+msgstr ""
+
+#: ../startup-cpt-projects.php:213
+msgid "i.e. \"New business building in Montreal\""
+msgstr ""
+
+#: ../startup-cpt-projects.php:219
+msgid "Type"
+msgstr ""
+
+#: ../startup-cpt-projects.php:220
+msgid "Select the type(s) of the project"
+msgstr ""
+
+#: ../startup-cpt-projects.php:228
+msgid "Status"
+msgstr ""
+
+#: ../startup-cpt-projects.php:229
+msgid "The project's current status"
+msgstr ""
+
+#: ../startup-cpt-projects.php:234
+msgid "Prévente"
+msgstr ""
+
+#: ../startup-cpt-projects.php:235
+msgid "Vendu"
+msgstr ""
+
+#: ../startup-cpt-projects.php:236
+msgid "Prix révisé"
+msgstr ""
+
+#: ../startup-cpt-projects.php:237
+msgid "Une unité disponible"
+msgstr ""
+
+#: ../startup-cpt-projects.php:238
+msgid "Deux unités disponibles"
+msgstr ""
+
+#: ../startup-cpt-projects.php:243
+msgid "Description"
+msgstr ""
+
+#: ../startup-cpt-projects.php:244
+msgid "Full, main description"
+msgstr ""
+
+#: ../startup-cpt-projects.php:250
+msgid "Specifications"
+msgstr ""
+
+#: ../startup-cpt-projects.php:257
+msgid "Available options"
+msgstr ""
+
+#: ../startup-cpt-projects.php:283
+msgid "Warranty"
+msgstr ""
+
+#: ../startup-cpt-projects.php:284
+msgid "i.e. \"5 years by Qualité Habitation\""
+msgstr ""
+
+#: ../startup-cpt-projects.php:290
+msgid "Price"
+msgstr ""
+
+#: ../startup-cpt-projects.php:291
+msgid "The project price in Canadian Dollar"
+msgstr ""
+
+#: ../startup-cpt-projects.php:297
+msgid "Implantation"
+msgstr ""
+
+#: ../startup-cpt-projects.php:298
+msgid "Image file of the certificate of implantation"
+msgstr ""
+
+#: ../startup-cpt-projects.php:308
+msgid "Plans"
+msgstr ""
+
+#: ../startup-cpt-projects.php:309
+msgid "Upload or add multiple images for project plans."
+msgstr ""
+
+#: ../startup-cpt-projects.php:316
+msgid "Gallery"
+msgstr ""
+
+#: ../startup-cpt-projects.php:317
+msgid "Upload or add multiple images for project photo gallery."
+msgstr ""
+
+#: ../startup-cpt-projects.php:324
+msgid "External url"
+msgstr ""
+
+#: ../startup-cpt-projects.php:325
+msgid "Link to te project on an extrenal website (i.e. real estate agency)"
+msgstr ""
+
+#: ../startup-cpt-projects.php:361
+msgid "Shortcake plugin must be active to use fast shortcodes."
+msgstr ""
+
+#: ../startup-cpt-projects.php:377
+msgid "Background"
+msgstr ""
+
+#: ../lib/updater.php:434
+msgid ""
+"The plugin has been updated, but could not be reactivated. Please reactivate "
+"it manually."
+msgstr ""
+
+#: ../lib/updater.php:435
+msgid "Plugin reactivated successfully."
+msgstr ""
