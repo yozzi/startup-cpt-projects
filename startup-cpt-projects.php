@@ -3,7 +3,7 @@
 Plugin Name: StartUp CPT Projects
 Description: Le plugin pour activer le Custom Post Projects
 Author: Yann Caplain
-Version: 1.2.0
+Version: 1.0.0
 Text Domain: startup-cpt-projects
 Domain Path: /languages
 */
