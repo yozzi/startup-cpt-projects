@@ -165,7 +165,7 @@ add_action( 'admin_menu' , 'startup_reloaded_project_types_metabox_remove' );
  */
 if ( !function_exists( 'cmb2_detection' ) ) {
     function cmb2_detection() {
-        if ( !is_plugin_active('CMB2/init.php')  && !function_exists( 'startup_reloaded_setup' ) ) {
+        if ( !class_exists('CMB2_Bootstrap_221')  && !function_exists( 'startup_reloaded_setup' ) ) {
             add_action( 'admin_notices', 'cmb2_notice' );
         }
     }
